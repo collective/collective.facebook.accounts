@@ -1,0 +1,36 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:browser="http://namespaces.zope.org/browser">
+
+    <adapter factory=".controlpanel.FacebookControlPanelAdapter" />
+  
+     <browser:resourceDirectory
+        name="collective.facebook.accounts.icons"
+        directory="icons"
+        />
+
+     <browser:resourceDirectory
+        name="collective.facebook.accounts.js"
+        directory="js"
+        />
+
+     <browser:resourceDirectory
+        name="collective.facebook.accounts.css"
+        directory="css"
+        />
+      
+    <browser:page
+        name="facebook-controlpanel"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.FacebookControlPanel"
+        permission="cmf.ManagePortal"
+        />
+
+    <browser:page
+        name="remove-fb-account"
+        for="Products.CMFPlone.interfaces.IPloneSiteRoot"
+        class=".controlpanel.RemoveAuthAccount"
+        permission="cmf.ManagePortal"
+        />
+
+</configure>

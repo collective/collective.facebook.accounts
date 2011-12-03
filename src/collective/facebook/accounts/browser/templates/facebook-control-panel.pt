@@ -1,0 +1,245 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      xml:lang="en" lang="en"
+      tal:omit-tag=""
+      metal:define-macro="controlpanel"
+      i18n:domain="plone">
+
+<metal:block use-macro="context/prefs_main_template/macros/master">
+
+<body>
+<metal:main fill-slot="prefs_configlet_main">
+
+    <link rel="stylesheet" 
+          type="text/css" 
+          media="screen" 
+          href="++resource++collective.facebook.accounts.css/facebook.css" />
+
+    <script type="text/javascript" 
+            src="++resource++collective.facebook.accounts.js/facebook.js"></script>
+
+    <metal:form metal:define-macro="form">
+
+        <metal:block define-macro="header">
+
+            <dl tal:define="status view/status"
+                 tal:condition="status"
+                 class="portalMessage info">
+                <dt i18n:translate="">
+                    Info
+                </dt>
+                <dd tal:content="view/status" />
+            </dl>
+
+        </metal:block>
+
+            <a href=""
+               id="setup-link"
+               tal:attributes="href string:$portal_url/plone_control_panel"
+               i18n:translate="">
+                Site Setup
+            </a> &rsaquo;
+
+        <h1 class="documentFirstHeading"
+            i18n:translate=""
+            tal:condition="view/label"
+            tal:content="view/label"
+            metal:define-slot="heading">
+            Do something
+        </h1>
+
+        <div class="documentDescription" i18n:translate=""
+           tal:condition="view/description"
+           tal:content="view/description">
+            Description
+        </div>
+
+        <div id="content-core">
+            
+            <form action="."
+                  metal:define-macro="master"
+                  tal:attributes="action request/URL;
+                                  class python: default"
+                  method="post"
+                  class="edit-form enableUnloadProtection"
+                  enctype="multipart/form-data"
+                  id="zc.page.browser_form">
+
+                <input type="hidden"
+                       name="fieldset.current"
+                       value=""
+                       tal:attributes="value request/fieldset.current | string:" />
+
+                <div metal:define-slot="extra_info" tal:replace="nothing">
+                </div>
+
+                <fieldset tal:define="accounts view/getAccounts">
+                    <legend i18n:translate=""
+                            i18n:domain="collective.facebook.accounts">Accounts</legend>
+                            
+                    <p tal:condition="not: accounts"
+                        i18n:translate=""
+                        i18n:domain="collective.facebook.accounts">
+                     There are no accounts configured yet.
+                    </p>
+                    
+                    <tal:block repeat="account accounts">
+                     <p tal:attributes="id string:auth-account-${account}">
+                        <img src="++resource++collective.facebook.accounts.icons/remove.png"
+                             width="12"
+                             height="12"
+                             tal:attributes="onclick string:removeAuthAccount('${account}')"/>
+                        <span tal:content="python:accounts[account]['name']"/>
+
+                        <strong>Expires:</strong>
+                        <span tal:content="python:accounts[account]['expires']"
+                                tal:condition="python:accounts[account]['expires']"/>
+
+                        <span tal:content="string:Never"
+                                i18n:translate=""
+                                i18n:domain="collective.facebook.accounts"
+                                tal:condition="python:not accounts[account]['expires']"/>
+                     </p>
+                    </tal:block>
+                </fieldset>
+                
+                <fieldset>
+                    <legend tal:define="form_name view/form_name|nothing"
+                            tal:condition="form_name"
+                            tal:content="form_name"
+                            i18n:translate="">Form name</legend>
+
+                    <fieldset>
+                        <legend i18n:translate="perm_fields"
+                                i18n:domain="collective.facebook.accounts">Permissions</legend>
+
+                        <tal:perm_fields tal:repeat="widget view/widgets">
+
+                            <div class="field"
+                                tal:condition="python: widget.name in
+                                                        ['form.non_r_perm',
+                                                        'form.r_perm']"
+                                tal:define="description widget/hint;
+                                            error widget/error"
+                                tal:attributes="name widget/name;
+                                                class python:'field'+(error and ' error' or '')">
+
+                                <label i18n:translate=""
+                                    tal:attributes="for widget/name"
+                                    tal:content="widget/label">
+                                    label
+                                </label>
+
+                                <span class="fieldRequired"
+                                    title="Required"
+                                    i18n:attributes="title title_required;"
+                                    i18n:translate="label_required"
+                                    tal:condition="widget/required">
+                                    (Required)
+                                </span>
+
+                                <div class="formHelp"
+                                    i18n:translate=""
+                                    tal:content="description"
+                                    tal:condition="description">
+                                    field description
+                                </div>
+
+                                <div tal:condition="error"
+                                    tal:content="structure error">
+                                    The Error
+                                </div>
+
+                                <div class="widget" tal:content="structure widget">
+                                    <input type="text" />
+                                </div>
+                            </div>
+
+                        </tal:perm_fields>
+
+                    </fieldset>
+
+                    <fieldset>
+                        <legend i18n:translate="api_keys"
+                                i18n:domain="collective.facebook.accounts">Api Keys</legend>
+
+                        <tal:api_keys tal:repeat="widget view/widgets">
+
+                            <div class="field"
+                                tal:condition="python: widget.name in
+                                                        ['form.app_key',
+                                                         'form.app_secret']"
+                                tal:define="description widget/hint;
+                                            error widget/error"
+                                tal:attributes="name widget/name;
+                                                class python:'field'+(error and ' error' or '')">
+
+                                <label i18n:translate=""
+                                    tal:attributes="for widget/name"
+                                    tal:content="widget/label">
+                                    label
+                                </label>
+
+                                <span class="fieldRequired"
+                                    title="Required"
+                                    i18n:attributes="title title_required;"
+                                    i18n:translate="label_required"
+                                    tal:condition="widget/required">
+                                    (Required)
+                                </span>
+
+                                <div class="formHelp"
+                                    i18n:translate=""
+                                    tal:content="description"
+                                    tal:condition="description">
+                                    field description
+                                </div>
+
+                                <div tal:condition="error"
+                                    tal:content="structure error">
+                                    The Error
+                                </div>
+
+                                <div class="widget" tal:content="structure widget">
+                                    <input type="text" />
+                                </div>
+                            </div>
+
+                        </tal:api_keys>
+
+                    </fieldset>
+
+                    <tal:request_user_auth>
+                        <span class="request_auth"
+                                onclick="requestAuth()"
+                                tal:content="view/request_user_auth"
+                                i18n:translate="" />
+                                
+                    </tal:request_user_auth>
+
+                </fieldset>
+                
+                <metal:block define-slot="above_buttons" />
+
+                <div class="visualClear"><!-- --></div>
+
+                <input tal:replace="structure context/@@authenticator/authenticator" />
+
+            </form>
+
+            <script type="text/javascript"
+                tal:define="extra_script view/extra_script | nothing"
+                tal:condition="extra_script"
+                tal:content="structure extra_script">
+            </script>
+        </div>
+
+    </metal:form>
+
+</metal:main>
+</body>
+
+</metal:block>
+</html>

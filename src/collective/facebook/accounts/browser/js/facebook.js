@@ -31,8 +31,11 @@ function requestAuth() {
                         'response_type=token'];
     var query = queryParams.join('&');
     var url = path + query;
-    //window.open(url);
-    window.location = url;
+
+    if (appID !== 'undefined'){
+        //window.open(url);
+        window.location = url;
+    }
 }
 
 if (window.location.hash.length != 0){

@@ -9,7 +9,6 @@ from plone.fieldsets.form import FieldsetsEditForm
 from zope.component import adapts
 from zope.interface import implements
 from zope.interface import Interface
-from zope.interface import alsoProvides
 
 from Products.CMFDefault.formlib.schema import SchemaAdapterBase
 from Products.CMFPlone.interfaces import IPloneSiteRoot
@@ -22,13 +21,7 @@ from interfaces import IFacebookControlPanel
 from collective.facebook.accounts import _
 from plone.registry.interfaces import IRegistry
 
-#from collective.facebook.accounts.config import PLONE_CONSUMER_KEY
-#from collective.facebook.accounts.config import PLONE_CONSUMER_SECRET
-
-from zope.component import getMultiAdapter
-
-from zope.schema.interfaces import IContextSourceBinder
-from zope.schema.vocabulary import SimpleVocabulary, SimpleTerm
+from plone.i18n.normalizer.interfaces import IIDNormalizer
 
 import json
 import urllib
@@ -182,7 +175,8 @@ class FacebookControlPanel(FieldsetsEditForm):
             info = json.load(urllib.urlopen(url+token))
             name = info.get('name', 'no_name')
 
-            id = '-'.join(name.lower().split())
+            normalizer = getUtility(IIDNormalizer)
+            id = normalizer.normalize(name)
             
             registry = getUtility(IRegistry)
             accounts = registry['collective.facebook.accounts']

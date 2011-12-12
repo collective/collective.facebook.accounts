@@ -1,5 +1,5 @@
 collective.facebook.accounts Installation
-=======================
+=========================================
 
  * When you're reading this you have probably already run
    ``easy_install collective.facebook.accounts``. Find out how to install setuptools

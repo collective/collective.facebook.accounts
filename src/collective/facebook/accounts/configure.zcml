@@ -21,6 +21,13 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      name="initial"
+      title="collective.facebook.accounts"
+      directory="profiles/initial"
+      description="Installs the collective.facebook.accounts package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
 
   <genericsetup:registerProfile
       name="uninstall"

@@ -16,6 +16,7 @@ class Fixture(PloneSandboxLayer):
 
     def setUpPloneSite(self, portal):
         # Install into Plone site using portal_setup
+        self.applyProfile(portal, 'collective.facebook.accounts:initial')
         self.applyProfile(portal, 'collective.facebook.accounts:default')
 
 

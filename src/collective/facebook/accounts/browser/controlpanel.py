@@ -196,7 +196,7 @@ class FacebookControlPanel(FieldsetsEditForm):
         
     def getAccounts(self):
         registry = getUtility(IRegistry)
-        accounts = registry['collective.facebook.accounts']
+        accounts = registry.get('collective.facebook.accounts', None)
         
         return accounts
         
@@ -205,7 +205,7 @@ class RemoveAuthAccount(BrowserView):
     
     def __call__(self, account_name):
         registry = getUtility(IRegistry)
-        accounts = registry['collective.facebook.accounts']
+        accounts = registry.get('collective.facebook.accounts', None)
         if not accounts:
             accounts = {}
             

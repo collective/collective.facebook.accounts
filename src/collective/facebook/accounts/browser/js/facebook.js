@@ -1,8 +1,26 @@
+function clearForm(){
+    document.getElementById("zc.page.browser_form").reset();
+    // doing a "reset()" to the form is not enough, so let's remove
+    // some additional form data
+    var non_r_perm = document.getElementById("form.non_r_perm.to");
+    while (non_r_perm.options[0] !== undefined){
+        non_r_perm.options[0] = null;
+    }
+    var r_perm = document.getElementById("form.r_perm.to");
+    while (r_perm.options[0] !== undefined){
+        r_perm.options[0] = null;
+    }
+}
+    
 function removeAuthAccount(name){
     $("#auth-account-"+name).remove();
     jQuery.get('@@remove-fb-account',
                 {'account_name':name},
-                function(results){});
+                function(results){
+                    clearForm();
+                    var url = '@@facebook-controlpanel';
+                    window.location = url;
+                });
 }
 
 function requestAuth() {
@@ -33,8 +51,9 @@ function requestAuth() {
     var url = path + query;
 
     if (appID !== 'undefined'){
-        //window.open(url);
-        window.location = url;
+        clearForm();
+        window.open(url, "_blank", 'width=600,height=500')
+
     }
 }
 
@@ -44,5 +63,11 @@ if (window.location.hash.length != 0){
     var queryParams = [accessToken,];
     var query = queryParams.join('&');
     var url = path + query;
-    window.location = url;
+    if (opener != null){
+        opener.location = url;
+        window.close();
+    }
+    else{
+        window.location = url;
+    }
 }

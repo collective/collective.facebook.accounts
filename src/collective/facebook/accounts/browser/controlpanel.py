@@ -211,6 +211,7 @@ class RemoveAuthAccount(BrowserView):
             
         try:
             del accounts[account_name]
+            registry['collective.facebook.accounts'] = accounts
         except:
             pass
             

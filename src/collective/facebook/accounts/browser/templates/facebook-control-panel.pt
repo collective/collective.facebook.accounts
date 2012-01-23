@@ -123,8 +123,7 @@
                                                         'form.r_perm']"
                                 tal:define="description widget/hint;
                                             error widget/error"
-                                tal:attributes="name widget/name;
-                                                class python:'field'+(error and ' error' or '')">
+                                tal:attributes="class python:'field'+(error and ' error' or '')">
 
                                 <label i18n:translate=""
                                     tal:attributes="for widget/name"
@@ -173,8 +172,7 @@
                                                          'form.app_secret']"
                                 tal:define="description widget/hint;
                                             error widget/error"
-                                tal:attributes="name widget/name;
-                                                class python:'field'+(error and ' error' or '')">
+                                tal:attributes="class python:'field'+(error and ' error' or '')">
 
                                 <label i18n:translate=""
                                     tal:attributes="for widget/name"

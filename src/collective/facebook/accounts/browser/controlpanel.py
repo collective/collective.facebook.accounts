@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*-
 from Products.Five import BrowserView
 from zope.component import getUtility
 
@@ -23,10 +24,15 @@ from plone.registry.interfaces import IRegistry
 
 from plone.i18n.normalizer.interfaces import IIDNormalizer
 
+from collective.facebook.accounts.config import PROJECTNAME
+
 import json
 import urllib
 from datetime import datetime, timedelta
 import DateTime
+import logging
+
+logger = logging.getLogger(PROJECTNAME)
 
 non_revocable_permissions = ['user_about_me',
                              'friends_about_me',
@@ -119,7 +125,7 @@ class IFacebookAppFieldSchema(Interface):
                          required=False,
                          value_type = schema.Choice(vocabulary=revocableVocabulary,),
                          )
-                         
+
     app_key = schema.TextLine(title=_(u'App ID/API Key'),
                               description=_(u"ID for your application. "
                                              "You need to create an app here: "
@@ -131,26 +137,26 @@ class IFacebookAppFieldSchema(Interface):
     #app_secret = schema.TextLine(title=_(u'App Secret'),
                                  #description=_(u"Secret for your application."),
                                  #required=True)
- 
-    
+
+
 class FacebookControlPanelAdapter(SchemaAdapterBase):
 
     adapts(IPloneSiteRoot)
     implements(IFacebookAppFieldSchema)
 
     non_r_perm = ""
-    r_perm = ""   
-    app_key = ""           
+    r_perm = ""
+    app_key = ""
     #app_secret = ""
-   
-    
+
+
 class FacebookControlPanel(FieldsetsEditForm):
     """
     Facebook control panel view
     """
-    
+
     implements(IFacebookControlPanel)
-    
+
     template = ViewPageTemplateFile('./templates/facebook-control-panel.pt')
 
     label = _("Facebook setup")
@@ -162,7 +168,11 @@ class FacebookControlPanel(FieldsetsEditForm):
 
     def __call__(self):
         if 'access_token' in self.request:
+            logger.info("Got a request with a token !")
+
             token = self.request.get('access_token')
+            logger.info("Token: %s"%token)
+
             url = "https://graph.facebook.com/me?access_token="
             expires = self.request.get('expires_in', '0')
 
@@ -172,16 +182,24 @@ class FacebookControlPanel(FieldsetsEditForm):
             else:
                 date = None
 
+            logger.info("URL to open: %s"%(url+token))
             info = json.load(urllib.urlopen(url+token))
             name = info.get('name', 'no_name')
 
+            logger.info("Got a name: %s"%name)
             normalizer = getUtility(IIDNormalizer)
             id = normalizer.normalize(name)
-            
+
             registry = getUtility(IRegistry)
             accounts = registry['collective.facebook.accounts']
             if not accounts:
                 accounts = {}
+
+            logger.info("About to save data in the registry")
+            logger.info("name: %s" % name)
+            logger.info("access_token: %s" % token)
+            logger.info("expires: %s" % date)
+
 
             accounts[id] = {'name' : name,
                               'access_token' : token,
@@ -190,28 +208,29 @@ class FacebookControlPanel(FieldsetsEditForm):
             registry['collective.facebook.accounts'] = accounts
             #self.status = _("Facebook account succesfully authorized.")
 
+            logger.info("Everything ok. redirecting...")
             self.request.RESPONSE.redirect('@@facebook-controlpanel')
-            
+
         return super(FacebookControlPanel, self).__call__()
-        
+
     def getAccounts(self):
         registry = getUtility(IRegistry)
         accounts = registry.get('collective.facebook.accounts', None)
-        
+
         return accounts
-        
+
 
 class RemoveAuthAccount(BrowserView):
-    
+
     def __call__(self, account_name):
         registry = getUtility(IRegistry)
         accounts = registry.get('collective.facebook.accounts', None)
         if not accounts:
             accounts = {}
-            
+
         try:
             del accounts[account_name]
             registry['collective.facebook.accounts'] = accounts
         except:
             pass
-            
+

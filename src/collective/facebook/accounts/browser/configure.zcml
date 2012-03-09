@@ -1,9 +1,12 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
+<configure xmlns="http://namespaces.zope.org/zope"
     xmlns:browser="http://namespaces.zope.org/browser">
 
+    <include package="Products.CMFCore" file="permissions.zcml"
+             xmlns:zcml="http://namespaces.zope.org/zcml"
+             zcml:condition="have plone-41" />
+
     <adapter factory=".controlpanel.FacebookControlPanelAdapter" />
-  
+
      <browser:resourceDirectory
         name="collective.facebook.accounts.icons"
         directory="icons"
@@ -18,7 +21,7 @@
         name="collective.facebook.accounts.css"
         directory="css"
         />
-      
+
     <browser:page
         name="facebook-controlpanel"
         for="Products.CMFPlone.interfaces.IPloneSiteRoot"

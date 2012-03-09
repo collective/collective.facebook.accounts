@@ -1,14 +1,11 @@
-<configure
-    xmlns="http://namespaces.zope.org/zope"
+<configure xmlns="http://namespaces.zope.org/zope"
     xmlns:five="http://namespaces.zope.org/five"
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
     i18n_domain="collective.facebook.accounts">
 
   <five:registerPackage package="." />
-
   <includeDependencies package="." />
-  
   <i18n:registerTranslations directory="locales" />
 
   <include package=".browser" />
@@ -23,9 +20,9 @@
 
   <genericsetup:registerProfile
       name="initial"
-      title="collective.facebook.accounts"
+      title="collective.facebook.accounts initial"
       directory="profiles/initial"
-      description="Installs the collective.facebook.accounts package (Initial setup)"
+      description="Installs the collective.facebook.accounts package (initial setup)."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
@@ -36,7 +33,5 @@
       description="Uninstall profile for the collective.facebook.accounts package."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
-
- <!-- -*- extra stuff goes here -*- -->
 
 </configure>

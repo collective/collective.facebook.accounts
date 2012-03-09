@@ -2,11 +2,11 @@
 # Franco Pellegrini, 2011.
 msgid ""
 msgstr ""
-"Project-Id-Version: \n"
-"POT-Creation-Date: 2011-12-02 18:27+0000\n"
-"PO-Revision-Date: 2011-12-02 15:27-0300\n"
-"Last-Translator: Franco Pellegrini\n"
-"Language-Team: Spanish <>\n"
+"Project-Id-Version: collective.facebook.accounts\n"
+"POT-Creation-Date: 2012-03-09 23:25+0000\n"
+"PO-Revision-Date: 2012-03-09 20:27-0300\n"
+"Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
+"Language-Team: Spanish <https://github.com/collective>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -22,70 +22,107 @@ msgstr ""
 msgid "Accounts"
 msgstr "Cuentas"
 
-#: collective/facebook/accounts/browser/controlpanel.py:130
+#: collective/facebook/accounts/browser/controlpanel.py:129
 msgid "App ID/API Key"
 msgstr "ID de aplicación / Llave de API"
 
-#: collective/facebook/accounts/browser/controlpanel.py:165
+#: collective/facebook/accounts/browser/controlpanel.py:164
 msgid "Authorize new account"
 msgstr "Autorizar nueva cuenta"
 
-#: collective/facebook/accounts/browser/controlpanel.py:111
-msgid ""
-"Choose which non revocable permissions to ask access to. Full explanation for "
-"each: https://developers.facebook.com/docs/reference/api/permissions/"
-msgstr ""
-"Seleccione que permisos revocables pedir. Explicación completa para cada uno: "
-"https://developers.facebook.com/docs/reference/api/permissions/"
+#: collective/facebook/accounts/browser/controlpanel.py:110
+msgid "Choose which non revocable permissions to ask access to. Full explanation for each: https://developers.facebook.com/docs/reference/api/permissions/"
+msgstr "Seleccione que permisos no revocables pedir. Explicación completa para cada uno: https://developers.facebook.com/docs/reference/api/permissions/"
 
-#: collective/facebook/accounts/browser/controlpanel.py:121
-msgid ""
-"Choose which revocable permissions to ask access to. Full explanation for "
-"each: https://developers.facebook.com/docs/reference/api/permissions/"
-msgstr ""
-"Seleccione que permisos no revocables pedir. Explicación completa para cada "
-"uno: https://developers.facebook.com/docs/reference/api/permissions/"
+#: collective/facebook/accounts/browser/controlpanel.py:120
+msgid "Choose which revocable permissions to ask access to. Full explanation for each: https://developers.facebook.com/docs/reference/api/permissions/"
+msgstr "Seleccione que permisos revocables pedir. Explicación completa para cada uno: https://developers.facebook.com/docs/reference/api/permissions/"
 
-#: collective/facebook/accounts/browser/controlpanel.py:163
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:93
+msgid "Expires:"
+msgstr "Expira:"
+
+#: collective/facebook/accounts/profiles/default/controlpanel.xml
+msgid "Facebook"
+msgstr "Facebook"
+
+#: collective/facebook/accounts/browser/controlpanel.py:162
 msgid "Facebook setup"
 msgstr "Configuración de Facebook"
 
-#: collective/facebook/accounts/browser/controlpanel.py:131
-msgid ""
-"ID for your application. You need to create an app here: https://developers."
-"facebook.com/apps"
-msgstr ""
-"ID Para su aplicación. Necesita crear una aplicación desde: "
-"https://developers.facebook.com/apps"
+#: collective/facebook/accounts/browser/controlpanel.py:130
+msgid "ID for your application. You need to create an app here: https://developers.facebook.com/apps"
+msgstr "ID Para su aplicación. Necesita crear una aplicación desde: https://developers.facebook.com/apps"
 
-#: collective/facebook/accounts/browser/controlpanel.py:164
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:30
+msgid "Info"
+msgstr "Información"
+
+#: configure.zcml
+msgid "Installs the collective.facebook.accounts package (initial setup)."
+msgstr "Instala el paquete collective.facebook.accounts (configuración inicial)."
+
+#: configure.zcml
+msgid "Installs the collective.facebook.accounts package."
+msgstr "Instala el paquete collective.facebook.accounts."
+
+#: collective/facebook/accounts/browser/controlpanel.py:163
 msgid "Lets you configure several Facebook accounts"
 msgstr "Permite configurar varias cuentas de Facebook"
 
-#: collective/facebook/accounts/browser/controlpanel.py:110
+#: collective/facebook/accounts/browser/controlpanel.py:109
 msgid "Non revocable permissions"
 msgstr "Permisos no revocables"
 
-#: collective/facebook/accounts/browser/controlpanel.py:168
+#: collective/facebook/accounts/browser/controlpanel.py:167
 msgid "Request user auth"
 msgstr "Requerir autenticación"
 
-#: collective/facebook/accounts/browser/controlpanel.py:120
+#: collective/facebook/accounts/browser/controlpanel.py:119
 msgid "Revocable permissions"
 msgstr "Permisos revocables"
 
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:82
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:38
+msgid "Site Setup"
+msgstr "Configuración del sitio"
+
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:81
 msgid "There are no accounts configured yet."
 msgstr "No se encuentran cuentas configuradas."
 
+#: configure.zcml
+msgid "Uninstall profile for the collective.facebook.accounts package."
+msgstr "Desinstala el paquete collective.facebook.accounts."
+
 #. Default: "Api Keys"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:165
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:159
 msgid "api_keys"
 msgstr "Llaves de API"
 
+#: configure.zcml
+msgid "collective.facebook.accounts"
+msgstr ""
+
+#: configure.zcml
+msgid "collective.facebook.accounts initial"
+msgstr ""
+
+#: configure.zcml
+msgid "collective.facebook.accounts uninstall"
+msgstr ""
+
+#. Default: "(Required)"
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:129
+msgid "label_required"
+msgstr "(Requerido)"
+
 #. Default: "Permissions"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:115
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:111
 msgid "perm_fields"
 msgstr "Permisos"
 
+#. Default: "Required"
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:129
+msgid "title_required"
+msgstr "Requerido"
 

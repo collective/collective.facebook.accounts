@@ -5,19 +5,19 @@
       xml:lang="en" lang="en"
       tal:omit-tag=""
       metal:define-macro="controlpanel"
-      i18n:domain="plone">
+      i18n:domain="collective.facebook.accounts">
 
 <metal:block use-macro="context/prefs_main_template/macros/master">
 
 <body>
 <metal:main fill-slot="prefs_configlet_main">
 
-    <link rel="stylesheet" 
-          type="text/css" 
-          media="screen" 
+    <link rel="stylesheet"
+          type="text/css"
+          media="screen"
           href="++resource++collective.facebook.accounts.css/facebook.css" />
 
-    <script type="text/javascript" 
+    <script type="text/javascript"
             src="++resource++collective.facebook.accounts.js/facebook.js"></script>
 
     <metal:form metal:define-macro="form">
@@ -57,7 +57,7 @@
         </div>
 
         <div id="content-core">
-            
+
             <form action="."
                   metal:define-macro="master"
                   tal:attributes="action request/URL;
@@ -76,15 +76,12 @@
                 </div>
 
                 <fieldset tal:define="accounts view/getAccounts">
-                    <legend i18n:translate=""
-                            i18n:domain="collective.facebook.accounts">Accounts</legend>
-                            
-                    <p tal:condition="not: accounts"
-                        i18n:translate=""
-                        i18n:domain="collective.facebook.accounts">
+                    <legend i18n:translate="">Accounts</legend>
+
+                    <p tal:condition="not: accounts" i18n:translate="">
                      There are no accounts configured yet.
                     </p>
-                    
+
                     <tal:block repeat="account accounts">
                      <p tal:attributes="id string:auth-account-${account}">
                         <img src="++resource++collective.facebook.accounts.icons/remove.png"
@@ -93,18 +90,17 @@
                              tal:attributes="onclick string:removeAuthAccount('${account}')"/>
                         <span tal:content="python:accounts[account]['name']"/>
 
-                        <strong>Expires:</strong>
+                        <strong i18n:translate="">Expires:</strong>
                         <span tal:content="python:accounts[account]['expires']"
                                 tal:condition="python:accounts[account]['expires']"/>
 
                         <span tal:content="string:Never"
                                 i18n:translate=""
-                                i18n:domain="collective.facebook.accounts"
                                 tal:condition="python:not accounts[account]['expires']"/>
                      </p>
                     </tal:block>
                 </fieldset>
-                
+
                 <fieldset>
                     <legend tal:define="form_name view/form_name|nothing"
                             tal:condition="form_name"
@@ -112,8 +108,7 @@
                             i18n:translate="">Form name</legend>
 
                     <fieldset>
-                        <legend i18n:translate="perm_fields"
-                                i18n:domain="collective.facebook.accounts">Permissions</legend>
+                        <legend i18n:translate="perm_fields">Permissions</legend>
 
                         <tal:perm_fields tal:repeat="widget view/widgets">
 
@@ -161,8 +156,7 @@
                     </fieldset>
 
                     <fieldset>
-                        <legend i18n:translate="api_keys"
-                                i18n:domain="collective.facebook.accounts">Api Keys</legend>
+                        <legend i18n:translate="api_keys">Api Keys</legend>
 
                         <tal:api_keys tal:repeat="widget view/widgets">
 
@@ -214,11 +208,11 @@
                                 onclick="requestAuth()"
                                 tal:content="view/request_user_auth"
                                 i18n:translate="" />
-                                
+
                     </tal:request_user_auth>
 
                 </fieldset>
-                
+
                 <metal:block define-slot="above_buttons" />
 
                 <div class="visualClear"><!-- --></div>

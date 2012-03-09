@@ -1,0 +1,10 @@
+Contributors
+------------
+
+* Franco Pellegrini (frapell@gmail.com)
+
+* Héctor Velarde (hector.velarde@gmail.com)
+
+* Silvestre Huens (s.huens@gmail.com)
+
+Development sponsored by Open Multimedia.

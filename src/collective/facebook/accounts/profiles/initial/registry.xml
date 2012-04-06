@@ -1,9 +1,8 @@
+<?xml version="1.0"?>
 <registry>
-
-    <record name="collective.facebook.accounts">
-        <field type="plone.registry.field.Dict">
-            <title>Accounts</title>
-        </field>
-    </record>
-
+ <record name="collective.facebook.accounts">
+  <field type="plone.registry.field.Dict">
+   <title>Accounts</title>
+ </field>
+ </record>
 </registry>

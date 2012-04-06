@@ -1,9 +1,7 @@
 Changelog
-=========
+---------
 
-1.0
----
+1.0dev (unreleased)
+^^^^^^^^^^^^^^^^^^^
 
-- Added spanish internationalization [frapell]
-- Created a configlet to add and remove facebook accounts [frapell]
-- Initial release
+- Initial release.

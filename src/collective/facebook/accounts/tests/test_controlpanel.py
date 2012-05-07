@@ -22,7 +22,6 @@ class ControlPanelTestCase(unittest.TestCase):
     def setUp(self):
         self.portal = self.layer['portal']
         self.controlpanel = self.portal['portal_controlpanel']
-        setRoles(self.portal, TEST_USER_ID, ['Manager'])
 
     def test_controlpanel_view(self):
         view = getMultiAdapter((self.portal, self.portal.REQUEST),
@@ -43,6 +42,7 @@ class ControlPanelTestCase(unittest.TestCase):
         self.assertTrue('FacebookSettings' in actions)
 
     def test_controlpanel_removed_on_uninstall(self):
+        setRoles(self.portal, TEST_USER_ID, ['Manager'])
         qi = self.portal['portal_quickinstaller']
         qi.uninstallProducts(products=[PROJECTNAME])
         actions = [a.getAction(self)['id']
@@ -69,7 +69,3 @@ class RegistryTestCase(unittest.TestCase):
         qi.uninstallProducts(products=[PROJECTNAME])
         self.assertTrue(self.record not in self.registry.records,
                          'record still in configuration registry')
-
-
-def test_suite():
-    return unittest.defaultTestLoader.loadTestsFromName(__name__)

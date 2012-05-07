@@ -33,7 +33,3 @@ class UninstallTest(unittest.TestCase):
 
     def test_uninstalled(self):
         self.assertFalse(self.qi.isProductInstalled(PROJECTNAME))
-
-
-def test_suite():
-    return unittest.defaultTestLoader.loadTestsFromName(__name__)

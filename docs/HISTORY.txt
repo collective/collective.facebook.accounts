@@ -4,10 +4,11 @@ Changelog
 1.0b2 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Tested for Plone 4.2 compatibility. [hvelarde]
 
 
 1.0b1 (2012-04-05)
 ^^^^^^^^^^^^^^^^^^^
 
 - Initial release.
+

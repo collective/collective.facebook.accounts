@@ -7,15 +7,15 @@ collective.facebook.accounts
 Overview
 --------
 
-This product allows you to add Facebook accounts to a Plone site.
+This product allows you to associate `Facebook`_ accounts with a Plone site.
 
-It uses oAuth authentication.
+It uses `OAuth`_ authentication.
 
 Prerequisites
 -------------
 
 Facebook accounts are added to the Plone site using a Facebook app. You can
-create your own from https://developers.facebook.com/apps. Make sure to write
+create your own from Facebook's `App Dashboard`_. Make sure to write
 down the app's "App ID/API Key".
 
 Usage
@@ -23,8 +23,7 @@ Usage
 
 - Go to the "Site Setup", then to the "Facebook" tool.
 - Choose from the "Permissions" section, which permissions you'll need to use.
-  You can get further info on each one, from
-  https://developers.facebook.com/docs/reference/api/permissions/
+  You can get further info on each one, from the `Permissions Reference`_
 - Write the "App ID/API Key" from your Facebook app (see prerequisites).
 - Click on "Request user auth"
 - If your browser asks to, click on "Leave this page".
@@ -45,5 +44,11 @@ Actually posting or getting to/from Facebook
 
 This product just saves the needed data in order to use the Facebook API.
 You'll need additional products in order to do so, for example
-"collective.facebook.portlets".
+`collective.facebook.portlets`_.
+
+.. _`Facebook`: http://www.facebook.com/
+.. _`collective.facebook.portlets`: http://pypi.python.org/pypi/collective.facebook.portlets
+.. _`App Dashboard`: https://developers.facebook.com/apps
+.. _`Permissions Reference`: https://developers.facebook.com/docs/reference/api/permissions/
+.. _`OAuth`: http://oauth.net/
 

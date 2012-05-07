@@ -2,14 +2,16 @@ from setuptools import setup, find_packages
 import os
 
 version = '1.0b2.dev0'
-long_description = open("README.rst").read() + "\n" + \
+description = "This product allows you to associate Facebook accounts with a \
+Plone site."
+long_description = open("README.txt").read() + "\n" + \
                    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" + \
                    open(os.path.join("docs", "CREDITS.txt")).read() + "\n" + \
                    open(os.path.join("docs", "HISTORY.txt")).read()
 
 setup(name='collective.facebook.accounts',
       version=version,
-      description='This product allows you to add Facebook accounts to a Plone site.',
+      description=description,
       long_description=long_description,
       classifiers=[
         "Development Status :: 4 - Beta",

@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0b2'
+version = '1.0b3.dev0'
 description = "This product allows you to associate Facebook accounts with a \
 Plone site."
 long_description = open("README.txt").read() + "\n" + \

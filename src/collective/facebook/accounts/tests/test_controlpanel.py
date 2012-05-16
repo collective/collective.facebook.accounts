@@ -68,4 +68,4 @@ class RegistryTestCase(unittest.TestCase):
         qi = self.portal['portal_quickinstaller']
         qi.uninstallProducts(products=[PROJECTNAME])
         self.assertTrue(self.record not in self.registry.records,
-                         'record still in configuration registry')
+                        'record still in configuration registry')

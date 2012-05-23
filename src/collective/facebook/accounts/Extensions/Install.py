@@ -4,18 +4,6 @@ from Products.CMFCore.utils import getToolByName
 
 from collective.facebook.accounts.config import PROJECTNAME
 
-
-def install(portal, reinstall=False):
-    setup_tool = getToolByName(portal, 'portal_setup')
-    if not reinstall:
-        initial = 'profile-%s:initial' % PROJECTNAME
-        setup_tool.runAllImportStepsFromProfile(initial)
-
-    default = 'profile-%s:default' % PROJECTNAME
-    setup_tool.runAllImportStepsFromProfile(default)
-    return "Ran all install steps."
-
-
 def uninstall(portal, reinstall=False):
     if not reinstall:
         profile = 'profile-%s:uninstall' % PROJECTNAME

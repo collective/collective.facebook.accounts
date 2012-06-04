@@ -38,6 +38,7 @@
             <a href=""
                id="setup-link"
                tal:attributes="href string:$portal_url/plone_control_panel"
+               i18n:domain="plone"
                i18n:translate="">
                 Site Setup
             </a> &rsaquo;
@@ -128,6 +129,7 @@
 
                                 <span class="fieldRequired"
                                     title="Required"
+                                    i18n:domain="plone"
                                     i18n:attributes="title title_required;"
                                     i18n:translate="label_required"
                                     tal:condition="widget/required">
@@ -176,6 +178,7 @@
 
                                 <span class="fieldRequired"
                                     title="Required"
+                                    i18n:domain="plone"
                                     i18n:attributes="title title_required;"
                                     i18n:translate="label_required"
                                     tal:condition="widget/required">

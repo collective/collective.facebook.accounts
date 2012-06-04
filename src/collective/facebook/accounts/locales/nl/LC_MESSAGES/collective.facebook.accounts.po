@@ -1,0 +1,110 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: collective.facebook.accounts\n"
+"POT-Creation-Date: 2012-06-04 15:16+0000\n"
+"PO-Revision-Date: 2012-06-04 17:15+0200\n"
+"Last-Translator: Mark van Lent <mark.van.lent@edition1.nl>\n"
+"Language-Team: Edition1 <info@edition1.nl>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0\n"
+"Language-Code: nl\n"
+"Language-Name: Nederlands\n"
+"Preferred-Encodings: utf-8 latin1\n"
+"Domain: collective.facebook.accounts\n"
+
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:80
+msgid "Accounts"
+msgstr "Accounts"
+
+#: collective/facebook/accounts/browser/controlpanel.py:129
+msgid "App ID/API Key"
+msgstr "App ID/API Key"
+
+#: collective/facebook/accounts/browser/controlpanel.py:164
+msgid "Authorize new account"
+msgstr "Autoriseer nieuw account"
+
+#: collective/facebook/accounts/browser/controlpanel.py:110
+msgid "Choose which non revocable permissions to ask access to. Full explanation for each: https://developers.facebook.com/docs/reference/api/permissions/"
+msgstr "Kies voor welke van de niet herroepelijke permissies toestemming gevraagd moeten worden. Voor een volledige uitleg: https://developers.facebook.com/docs/reference/api/permissions/"
+
+#: collective/facebook/accounts/browser/controlpanel.py:120
+msgid "Choose which revocable permissions to ask access to. Full explanation for each: https://developers.facebook.com/docs/reference/api/permissions/"
+msgstr "Kies voor welke van de herroepelijke permissies toestemming gevraagd moeten worden. Voor een volledige uitleg: https://developers.facebook.com/docs/reference/api/permissions/"
+
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:94
+msgid "Expires:"
+msgstr "Verloopt:"
+
+#: collective/facebook/accounts/profiles/default/controlpanel.xml
+msgid "Facebook"
+msgstr "Facebook"
+
+#: collective/facebook/accounts/browser/controlpanel.py:162
+msgid "Facebook setup"
+msgstr "Facebook instellingen"
+
+#: collective/facebook/accounts/browser/controlpanel.py:130
+msgid "ID for your application. You need to create an app here: https://developers.facebook.com/apps"
+msgstr "ID van uw applicatie. U moet een applicatie aanmaken via: https://developers.facebook.com/apps"
+
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:30
+msgid "Info"
+msgstr "Informatie"
+
+#: configure.zcml
+msgid "Installs the collective.facebook.accounts package (initial setup)."
+msgstr "Installeert het collective.facebook.accounts product (initiële setup)."
+
+#: configure.zcml
+msgid "Installs the collective.facebook.accounts package."
+msgstr "Installeert het collective.facebook.accounts product."
+
+#: collective/facebook/accounts/browser/controlpanel.py:163
+msgid "Lets you configure several Facebook accounts"
+msgstr "Installeert het collective.facebook.accounts product."
+
+#: collective/facebook/accounts/browser/controlpanel.py:109
+msgid "Non revocable permissions"
+msgstr "Niet herroepbare permissies"
+
+#: collective/facebook/accounts/browser/controlpanel.py:167
+msgid "Request user auth"
+msgstr "Vraag autorisatie"
+
+#: collective/facebook/accounts/browser/controlpanel.py:119
+msgid "Revocable permissions"
+msgstr "Herroepbare permissies"
+
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:82
+msgid "There are no accounts configured yet."
+msgstr "Er zijn nog geen accounts geconfigureerd."
+
+#: configure.zcml
+msgid "Uninstall profile for the collective.facebook.accounts package."
+msgstr "Profiel om het collective.facebook.accounts product te de-installeren."
+
+#. Default: "Api Keys"
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:161
+msgid "api_keys"
+msgstr "Api keys"
+
+#: configure.zcml
+msgid "collective.facebook.accounts"
+msgstr "collective.facebooks.accounts"
+
+#: configure.zcml
+msgid "collective.facebook.accounts initial"
+msgstr "collective.facebook.accounts initieel"
+
+#: configure.zcml
+msgid "collective.facebook.accounts uninstall"
+msgstr "collective.facebook.accounts de-installeren"
+
+#. Default: "Permissions"
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:112
+msgid "perm_fields"
+msgstr "Permissies"
+

@@ -4,6 +4,8 @@ Changelog
 1.0b3 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
+- Add Dutch translations. [markvl]
+
 - Let the plone i18n domain handle some known strings. [markvl]
 
 

@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collective.facebook.accounts\n"
 "POT-Creation-Date: 2012-06-04 15:16+0000\n"
-"PO-Revision-Date: 2012-06-04 17:15+0200\n"
+"PO-Revision-Date: 2012-06-05 09:43+0200\n"
 "Last-Translator: Mark van Lent <mark.van.lent@edition1.nl>\n"
 "Language-Team: Edition1 <info@edition1.nl>\n"
 "MIME-Version: 1.0\n"
@@ -64,7 +64,7 @@ msgstr "Installeert het collective.facebook.accounts product."
 
 #: collective/facebook/accounts/browser/controlpanel.py:163
 msgid "Lets you configure several Facebook accounts"
-msgstr "Installeert het collective.facebook.accounts product."
+msgstr "Laat u diverse Facebook accounts configureren"
 
 #: collective/facebook/accounts/browser/controlpanel.py:109
 msgid "Non revocable permissions"
@@ -107,4 +107,3 @@ msgstr "collective.facebook.accounts de-installeren"
 #: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:112
 msgid "perm_fields"
 msgstr "Permissies"
-

@@ -11,7 +11,7 @@ function clearForm(){
         r_perm.options[0] = null;
     }
 }
-    
+
 function removeAuthAccount(name){
     $("#auth-account-"+name).remove();
     jQuery.get('@@remove-fb-account',
@@ -24,14 +24,14 @@ function removeAuthAccount(name){
 }
 
 function requestAuth() {
-    
+
     var appID = document.getElementById('form.app_key').value;
-    var perms = ""
+    var perms = "";
 
     $("select[name='form.non_r_perm.to'] option").each(
         function (){
             perms = perms +','+ $(this).attr('value') ;
-            
+
         });
     $("select[name='form.r_perm.to'] option").each(
         function (){
@@ -41,7 +41,7 @@ function requestAuth() {
 
     // Remove initial ","
     perms = perms.slice(1);
-    
+
     var path = 'https://www.facebook.com/dialog/oauth?';
     var queryParams = ['client_id=' + appID,
                         'redirect_uri=' + window.location,
@@ -52,7 +52,7 @@ function requestAuth() {
 
     if (appID !== 'undefined'){
         clearForm();
-        window.open(url, "_blank", 'width=600,height=500')
+        window.open(url, "_blank", 'width=600,height=500');
 
     }
 }
@@ -60,7 +60,7 @@ function requestAuth() {
 if (window.location.hash.length != 0){
     var accessToken = window.location.hash.substring(1);
     var path = '@@facebook-controlpanel?';
-    var queryParams = [accessToken,];
+    var queryParams = [accessToken];
     var query = queryParams.join('&');
     var url = path + query;
     if (opener != null){

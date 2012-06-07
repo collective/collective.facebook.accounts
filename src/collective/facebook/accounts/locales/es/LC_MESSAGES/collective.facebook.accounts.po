@@ -3,7 +3,7 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.facebook.accounts\n"
-"POT-Creation-Date: 2012-06-04 15:16+0000\n"
+"POT-Creation-Date: 2012-06-07 09:35+0000\n"
 "PO-Revision-Date: 2012-03-09 20:27-0300\n"
 "Last-Translator: Héctor Velarde <hector.velarde@gmail.com>\n"
 "Language-Team: Spanish <https://github.com/collective>\n"
@@ -70,6 +70,10 @@ msgstr "Instala el paquete collective.facebook.accounts."
 msgid "Lets you configure several Facebook accounts"
 msgstr "Permite configurar varias cuentas de Facebook"
 
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:98
+msgid "Never"
+msgstr ""
+
 #: collective/facebook/accounts/browser/controlpanel.py:109
 msgid "Non revocable permissions"
 msgstr "Permisos no revocables"
@@ -91,7 +95,7 @@ msgid "Uninstall profile for the collective.facebook.accounts package."
 msgstr "Desinstala el paquete collective.facebook.accounts."
 
 #. Default: "Api Keys"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:161
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:160
 msgid "api_keys"
 msgstr "Llaves de API"
 
@@ -108,7 +112,7 @@ msgid "collective.facebook.accounts uninstall"
 msgstr ""
 
 #. Default: "Permissions"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:112
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:111
 msgid "perm_fields"
 msgstr "Permisos"
 

@@ -95,9 +95,8 @@
                         <span tal:content="python:accounts[account]['expires']"
                                 tal:condition="python:accounts[account]['expires']"/>
 
-                        <span tal:content="string:Never"
-                                i18n:translate=""
-                                tal:condition="python:not accounts[account]['expires']"/>
+                        <span i18n:translate=""
+                              tal:condition="python:not accounts[account]['expires']">Never</span>
                      </p>
                     </tal:block>
                 </fieldset>

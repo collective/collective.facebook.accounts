@@ -1,8 +1,8 @@
 msgid ""
 msgstr ""
 "Project-Id-Version: collective.facebook.accounts\n"
-"POT-Creation-Date: 2012-06-04 15:16+0000\n"
-"PO-Revision-Date: 2012-06-05 09:43+0200\n"
+"POT-Creation-Date: 2012-06-07 09:35+0000\n"
+"PO-Revision-Date: 2012-06-07 11:35+0200\n"
 "Last-Translator: Mark van Lent <mark.van.lent@edition1.nl>\n"
 "Language-Team: Edition1 <info@edition1.nl>\n"
 "MIME-Version: 1.0\n"
@@ -66,6 +66,10 @@ msgstr "Installeert het collective.facebook.accounts product."
 msgid "Lets you configure several Facebook accounts"
 msgstr "Laat u diverse Facebook accounts configureren"
 
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:98
+msgid "Never"
+msgstr "Nooit"
+
 #: collective/facebook/accounts/browser/controlpanel.py:109
 msgid "Non revocable permissions"
 msgstr "Niet herroepbare permissies"
@@ -87,7 +91,7 @@ msgid "Uninstall profile for the collective.facebook.accounts package."
 msgstr "Profiel om het collective.facebook.accounts product te de-installeren."
 
 #. Default: "Api Keys"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:161
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:160
 msgid "api_keys"
 msgstr "Api keys"
 
@@ -104,6 +108,6 @@ msgid "collective.facebook.accounts uninstall"
 msgstr "collective.facebook.accounts de-installeren"
 
 #. Default: "Permissions"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:112
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:111
 msgid "perm_fields"
 msgstr "Permissies"

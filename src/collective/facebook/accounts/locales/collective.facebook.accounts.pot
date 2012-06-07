@@ -25,8 +25,28 @@ msgstr ""
 msgid "App ID/API Key"
 msgstr ""
 
-#: collective/facebook/accounts/browser/controlpanel.py:164
+#: collective/facebook/accounts/browser/controlpanel.py:148
+msgid "App Secret"
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:184
+msgid "Authenticate app"
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:178
+msgid "Authenticate as a user and grant an application permissions."
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:180
+msgid "Authenticate as an application."
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:177
 msgid "Authorize new account"
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:179
+msgid "Authorize new app"
 msgstr ""
 
 #: collective/facebook/accounts/browser/controlpanel.py:110
@@ -45,7 +65,7 @@ msgstr ""
 msgid "Facebook"
 msgstr ""
 
-#: collective/facebook/accounts/browser/controlpanel.py:162
+#: collective/facebook/accounts/browser/controlpanel.py:175
 msgid "Facebook setup"
 msgstr ""
 
@@ -65,7 +85,7 @@ msgstr ""
 msgid "Installs the collective.facebook.accounts package."
 msgstr ""
 
-#: collective/facebook/accounts/browser/controlpanel.py:163
+#: collective/facebook/accounts/browser/controlpanel.py:176
 msgid "Lets you configure several Facebook accounts"
 msgstr ""
 
@@ -77,12 +97,16 @@ msgstr ""
 msgid "Non revocable permissions"
 msgstr ""
 
-#: collective/facebook/accounts/browser/controlpanel.py:167
+#: collective/facebook/accounts/browser/controlpanel.py:183
 msgid "Request user auth"
 msgstr ""
 
 #: collective/facebook/accounts/browser/controlpanel.py:119
 msgid "Revocable permissions"
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:149
+msgid "Secret for your application."
 msgstr ""
 
 #: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:82
@@ -94,7 +118,7 @@ msgid "Uninstall profile for the collective.facebook.accounts package."
 msgstr ""
 
 #. Default: "Api Keys"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:160
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:167
 msgid "api_keys"
 msgstr ""
 
@@ -111,7 +135,6 @@ msgid "collective.facebook.accounts uninstall"
 msgstr ""
 
 #. Default: "Permissions"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:111
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:118
 msgid "perm_fields"
 msgstr ""
-

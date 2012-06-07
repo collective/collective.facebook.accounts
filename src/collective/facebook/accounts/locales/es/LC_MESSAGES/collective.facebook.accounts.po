@@ -26,9 +26,29 @@ msgstr "Cuentas"
 msgid "App ID/API Key"
 msgstr "ID de aplicación / Llave de API"
 
-#: collective/facebook/accounts/browser/controlpanel.py:164
+#: collective/facebook/accounts/browser/controlpanel.py:148
+msgid "App Secret"
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:184
+msgid "Authenticate app"
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:178
+msgid "Authenticate as a user and grant an application permissions."
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:180
+msgid "Authenticate as an application."
+msgstr ""
+
+#: collective/facebook/accounts/browser/controlpanel.py:177
 msgid "Authorize new account"
 msgstr "Autorizar nueva cuenta"
+
+#: collective/facebook/accounts/browser/controlpanel.py:179
+msgid "Authorize new app"
+msgstr ""
 
 #: collective/facebook/accounts/browser/controlpanel.py:110
 msgid "Choose which non revocable permissions to ask access to. Full explanation for each: https://developers.facebook.com/docs/reference/api/permissions/"
@@ -46,7 +66,7 @@ msgstr "Expira:"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: collective/facebook/accounts/browser/controlpanel.py:162
+#: collective/facebook/accounts/browser/controlpanel.py:175
 msgid "Facebook setup"
 msgstr "Configuración de Facebook"
 
@@ -66,7 +86,7 @@ msgstr "Instala el paquete collective.facebook.accounts (configuración inicial)
 msgid "Installs the collective.facebook.accounts package."
 msgstr "Instala el paquete collective.facebook.accounts."
 
-#: collective/facebook/accounts/browser/controlpanel.py:163
+#: collective/facebook/accounts/browser/controlpanel.py:176
 msgid "Lets you configure several Facebook accounts"
 msgstr "Permite configurar varias cuentas de Facebook"
 
@@ -78,13 +98,17 @@ msgstr ""
 msgid "Non revocable permissions"
 msgstr "Permisos no revocables"
 
-#: collective/facebook/accounts/browser/controlpanel.py:167
+#: collective/facebook/accounts/browser/controlpanel.py:183
 msgid "Request user auth"
 msgstr "Requerir autenticación"
 
 #: collective/facebook/accounts/browser/controlpanel.py:119
 msgid "Revocable permissions"
 msgstr "Permisos revocables"
+
+#: collective/facebook/accounts/browser/controlpanel.py:149
+msgid "Secret for your application."
+msgstr ""
 
 #: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:82
 msgid "There are no accounts configured yet."
@@ -95,7 +119,7 @@ msgid "Uninstall profile for the collective.facebook.accounts package."
 msgstr "Desinstala el paquete collective.facebook.accounts."
 
 #. Default: "Api Keys"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:160
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:167
 msgid "api_keys"
 msgstr "Llaves de API"
 
@@ -112,7 +136,7 @@ msgid "collective.facebook.accounts uninstall"
 msgstr ""
 
 #. Default: "Permissions"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:111
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:118
 msgid "perm_fields"
 msgstr "Permisos"
 

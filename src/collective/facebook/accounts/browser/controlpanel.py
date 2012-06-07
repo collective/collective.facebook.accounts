@@ -138,6 +138,17 @@ class IFacebookAppFieldSchema(Interface):
                                  #description=_(u"Secret for your application."),
                                  #required=True)
 
+    app_key2 = schema.TextLine(title=_(u'App ID/API Key'),
+                              description=_(u"ID for your application. "
+                                             "You need to create an app here: "
+                                             "https://developers.facebook.com/"
+                                             "apps"),
+                              required=True)
+
+    app_secret2 = schema.TextLine(title=_(u'App Secret'),
+                                 description=_(u"Secret for your application."),
+                                 required=True)
+
 
 class FacebookControlPanelAdapter(SchemaAdapterBase):
 
@@ -148,6 +159,8 @@ class FacebookControlPanelAdapter(SchemaAdapterBase):
     r_perm = ""
     app_key = ""
     #app_secret = ""
+    app_key2 = ""
+    app_secret2 = ""
 
 
 class FacebookControlPanel(FieldsetsEditForm):
@@ -162,9 +175,13 @@ class FacebookControlPanel(FieldsetsEditForm):
     label = _("Facebook setup")
     description = _("""Lets you configure several Facebook accounts""")
     form_name = _("Authorize new account")
+    form_description = _(u'Authenticate as a user and grant an application permissions.')
+    form_name2 = _("Authorize new app")
+    form_description2 = _(u'Authenticate as an application.')
     form_fields = form.FormFields(IFacebookAppFieldSchema)
 
-    request_user_auth = _("Request user auth")
+    request_user_auth = _(u"Request user auth")
+    request_app_token = _(u"Authenticate app")
 
     def __call__(self):
         if 'access_token' in self.request:
@@ -173,7 +190,10 @@ class FacebookControlPanel(FieldsetsEditForm):
             token = self.request.get('access_token')
             logger.info("Token: %s"%token)
 
-            url = "https://graph.facebook.com/me?access_token="
+            if self.request.get('app_token'):
+                url = "https://graph.facebook.com/app?access_token="
+            else:
+                url = "https://graph.facebook.com/me?access_token="
             expires = self.request.get('expires_in', '0')
 
             if expires != '0':
@@ -233,4 +253,3 @@ class RemoveAuthAccount(BrowserView):
             registry['collective.facebook.accounts'] = accounts
         except:
             pass
-

@@ -107,6 +107,12 @@
                             tal:content="form_name"
                             i18n:translate="">Form name</legend>
 
+                    <div class="formhelp"
+                         tal:define="description view/form_description|nothing"
+                         tal:condition="description"
+                         tal:content="description"
+                         i18n:translate="">Fieldset description</div>
+
                     <fieldset>
                         <legend i18n:translate="perm_fields">Permissions</legend>
 
@@ -213,6 +219,75 @@
 
                     </tal:request_user_auth>
 
+                </fieldset>
+                <fieldset>
+                  <legend tal:define="form_name2 view/form_name2|nothing"
+                          tal:condition="form_name2"
+                          tal:content="form_name2"
+                          i18n:translate="">Form name</legend>
+
+                  <div class="formhelp"
+                       tal:define="description2 view/form_description2|nothing"
+                       tal:condition="description2"
+                       tal:content="description2"
+                       i18n:translate="">Fieldset description</div>
+
+                  <fieldset>
+                    <legend i18n:translate="api_keys">Api Keys</legend>
+
+                    <tal:api_keys tal:repeat="widget view/widgets">
+
+                      <div class="field"
+                           tal:condition="python: widget.name in
+                                          ['form.app_key2',
+                                          'form.app_secret2']"
+                           tal:define="description widget/hint;
+                                       error widget/error"
+                           tal:attributes="class python:'field'+(error and ' error' or '')">
+
+                        <label i18n:translate=""
+                               tal:attributes="for widget/name"
+                               tal:content="widget/label">
+                          label
+                        </label>
+
+                        <span class="fieldRequired"
+                              title="Required"
+                              i18n:domain="plone"
+                              i18n:attributes="title title_required;"
+                              i18n:translate="label_required"
+                              tal:condition="widget/required">
+                          (Required)
+                        </span>
+
+                        <div class="formHelp"
+                             i18n:translate=""
+                             tal:content="description"
+                             tal:condition="description">
+                          field description
+                        </div>
+
+                        <div tal:condition="error"
+                             tal:content="structure error">
+                          The Error
+                        </div>
+
+                        <div class="widget" tal:content="structure widget">
+                          <input type="text" />
+                        </div>
+                      </div>
+
+                    </tal:api_keys>
+
+                  </fieldset>
+
+                  <tal:request_app_token>
+                    <span class="request_app_token"
+                          onclick="requestAppToken()"
+                          tal:content="view/request_app_token"
+                          i18n:translate="" />
+
+                  </tal:request_app_token>
                 </fieldset>
 
                 <metal:block define-slot="above_buttons" />

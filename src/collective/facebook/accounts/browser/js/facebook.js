@@ -57,6 +57,33 @@ function requestAuth() {
     }
 }
 
+function requestAppToken() {
+    var appID = document.getElementById('form.app_key2').value;
+    var appSecret = document.getElementById('form.app_secret2').value;
+
+    var path = 'https://graph.facebook.com/oauth/access_token?';
+    var queryParams = ['client_id=' + appID,
+                       'client_secret=' + appSecret,
+                       'grant_type=client_credentials'];
+    var query = queryParams.join('&');
+    var url = path + query;
+
+    if (appID !== 'undefined' && appID !== "" &&
+        appSecret !== 'undefined' && appSecret !== ""){
+        clearForm();
+        jQuery.get(url, null, function (data) {
+            var RE = /access_token=(.*)/;
+            var match = data.match(RE);
+            if (match && match[1]) {
+                queryParams = ['access_token=' + match[1],
+                               'app_token=1'];
+                query = queryParams.join('&');
+                window.location = window.location['href'] + '?' + query;
+            }
+        });
+    }
+}
+
 if (window.location.hash.length != 0){
     var accessToken = window.location.hash.substring(1);
     var path = '@@facebook-controlpanel?';

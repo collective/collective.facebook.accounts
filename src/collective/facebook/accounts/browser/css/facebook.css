@@ -2,7 +2,7 @@
  * CSS
  */
 
-span.request_auth {
+span.request_auth, span.request_app_token {
     border: 1px solid black;
     padding: 3px 5px;
     cursor:pointer;

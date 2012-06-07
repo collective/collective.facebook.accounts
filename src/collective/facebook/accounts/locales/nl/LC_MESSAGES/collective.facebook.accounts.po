@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: collective.facebook.accounts\n"
 "POT-Creation-Date: 2012-06-07 09:35+0000\n"
-"PO-Revision-Date: 2012-06-07 11:35+0200\n"
+"PO-Revision-Date: 2012-06-07 11:40+0200\n"
 "Last-Translator: Mark van Lent <mark.van.lent@edition1.nl>\n"
 "Language-Team: Edition1 <info@edition1.nl>\n"
 "MIME-Version: 1.0\n"
@@ -22,9 +22,29 @@ msgstr "Accounts"
 msgid "App ID/API Key"
 msgstr "App ID/API Key"
 
-#: collective/facebook/accounts/browser/controlpanel.py:164
+#: collective/facebook/accounts/browser/controlpanel.py:148
+msgid "App Secret"
+msgstr "App Secret"
+
+#: collective/facebook/accounts/browser/controlpanel.py:184
+msgid "Authenticate app"
+msgstr "Authenticeer app"
+
+#: collective/facebook/accounts/browser/controlpanel.py:178
+msgid "Authenticate as a user and grant an application permissions."
+msgstr "Authenticeer als een gebruiker en geef een applicatie rechten."
+
+#: collective/facebook/accounts/browser/controlpanel.py:180
+msgid "Authenticate as an application."
+msgstr "Authenticeer als een applicatie."
+
+#: collective/facebook/accounts/browser/controlpanel.py:177
 msgid "Authorize new account"
 msgstr "Autoriseer nieuw account"
+
+#: collective/facebook/accounts/browser/controlpanel.py:179
+msgid "Authorize new app"
+msgstr "Autoriseer nieuwe app"
 
 #: collective/facebook/accounts/browser/controlpanel.py:110
 msgid "Choose which non revocable permissions to ask access to. Full explanation for each: https://developers.facebook.com/docs/reference/api/permissions/"
@@ -42,7 +62,7 @@ msgstr "Verloopt:"
 msgid "Facebook"
 msgstr "Facebook"
 
-#: collective/facebook/accounts/browser/controlpanel.py:162
+#: collective/facebook/accounts/browser/controlpanel.py:175
 msgid "Facebook setup"
 msgstr "Facebook instellingen"
 
@@ -62,7 +82,7 @@ msgstr "Installeert het collective.facebook.accounts product (initiële setup)."
 msgid "Installs the collective.facebook.accounts package."
 msgstr "Installeert het collective.facebook.accounts product."
 
-#: collective/facebook/accounts/browser/controlpanel.py:163
+#: collective/facebook/accounts/browser/controlpanel.py:176
 msgid "Lets you configure several Facebook accounts"
 msgstr "Laat u diverse Facebook accounts configureren"
 
@@ -74,13 +94,17 @@ msgstr "Nooit"
 msgid "Non revocable permissions"
 msgstr "Niet herroepbare permissies"
 
-#: collective/facebook/accounts/browser/controlpanel.py:167
+#: collective/facebook/accounts/browser/controlpanel.py:183
 msgid "Request user auth"
 msgstr "Vraag autorisatie"
 
 #: collective/facebook/accounts/browser/controlpanel.py:119
 msgid "Revocable permissions"
 msgstr "Herroepbare permissies"
+
+#: collective/facebook/accounts/browser/controlpanel.py:149
+msgid "Secret for your application."
+msgstr "Geheime sleutel van uw applicatie."
 
 #: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:82
 msgid "There are no accounts configured yet."
@@ -91,7 +115,8 @@ msgid "Uninstall profile for the collective.facebook.accounts package."
 msgstr "Profiel om het collective.facebook.accounts product te de-installeren."
 
 #. Default: "Api Keys"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:160
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:167
+>>>>>>> Implement Facebook application authorization.
 msgid "api_keys"
 msgstr "Api keys"
 
@@ -108,6 +133,6 @@ msgid "collective.facebook.accounts uninstall"
 msgstr "collective.facebook.accounts de-installeren"
 
 #. Default: "Permissions"
-#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:111
+#: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:118
 msgid "perm_fields"
 msgstr "Permissies"

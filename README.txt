@@ -39,6 +39,18 @@ If you want to remove an account, simply click on its red cross next to its
 name. Be carefull, it will delete the account without confirmation, and it
 cannot be undone.
 
+Applications
+++++++++++++
+
+If you want to authorize your application to access the Facebook API,
+for instance to show a portlet with a user's Wall, you can do just that:
+
+- Go to the "Site Setup", then to the "Facebook" tool.
+- Enter the "App/ID/API Key" and "App Secret" in the "Authorize new app" section.
+- Click on "Authenticate app".
+
+You should now see your application listed in the "Accounts" section.
+
 Actually posting or getting to/from Facebook
 --------------------------------------------
 
@@ -51,4 +63,3 @@ You'll need additional products in order to do so, for example
 .. _`App Dashboard`: https://developers.facebook.com/apps
 .. _`Permissions Reference`: https://developers.facebook.com/docs/reference/api/permissions/
 .. _`OAuth`: http://oauth.net/
-

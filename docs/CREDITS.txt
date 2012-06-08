@@ -4,6 +4,6 @@ Contributors
 * Franco Pellegrini
 * Héctor Velarde
 * Silvestre Huens
+* Mark van Lent
 
 Development sponsored by Open Multimedia.
-

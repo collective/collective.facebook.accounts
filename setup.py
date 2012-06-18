@@ -5,7 +5,7 @@ import os
 
 version = '1.0b3.dev0'
 description = "This product allows you to associate Facebook accounts with a \
-Plone site."
+Plone site using OAuth authentication."
 long_description = open("README.txt").read() + "\n" + \
                    open(os.path.join("docs", "INSTALL.txt")).read() + "\n" + \
                    open(os.path.join("docs", "CREDITS.txt")).read() + "\n" + \
@@ -27,6 +27,7 @@ setup(name='collective.facebook.accounts',
         "Programming Language :: JavaScript",
         "Programming Language :: Python",
         "Programming Language :: Python :: 2.6",
+        "Programming Language :: Python :: 2.7",
         "Topic :: Software Development :: Libraries :: Python Modules",
         ],
       keywords='plone facebook oauth',

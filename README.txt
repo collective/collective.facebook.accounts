@@ -36,7 +36,7 @@ name. Be carefull, it will delete the account without confirmation, and it
 cannot be undone.
 
 Applications
-++++++++++++
+^^^^^^^^^^^^
 
 If you want to authorize your application to access the Facebook API,
 for instance to show a portlet with a user's Wall, you can do just that:
@@ -49,7 +49,7 @@ for instance to show a portlet with a user's Wall, you can do just that:
 You should now see your application listed in the "Accounts" section.
 
 Actually posting or getting to/from Facebook
---------------------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 This product just saves the needed data in order to use the Facebook API.
 You'll need additional products in order to do so, for example

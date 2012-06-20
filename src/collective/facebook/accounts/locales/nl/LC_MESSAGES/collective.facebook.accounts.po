@@ -116,7 +116,6 @@ msgstr "Profiel om het collective.facebook.accounts product te de-installeren."
 
 #. Default: "Api Keys"
 #: collective/facebook/accounts/browser/templates/facebook-control-panel.pt:167
-#>>>>>>> Implement Facebook application authorization.
 msgid "api_keys"
 msgstr "Api keys"
 

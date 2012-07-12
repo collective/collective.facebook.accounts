@@ -6,7 +6,7 @@ Because you have to know where your towel is.
 1.0b4 (unreleased)
 ^^^^^^^^^^^^^^^^^^
 
-- Nothing changed yet.
+- Refactored the control panel to improve usability [frapell]
 
 
 1.0b3 (2012-06-18)

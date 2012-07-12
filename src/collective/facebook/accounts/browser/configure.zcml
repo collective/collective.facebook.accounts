@@ -5,7 +5,7 @@
              xmlns:zcml="http://namespaces.zope.org/zcml"
              zcml:condition="have plone-41" />
 
-    <adapter factory=".controlpanel.FacebookControlPanelAdapter" />
+     <adapter factory=".controlpanel.FacebookControlPanelAdapter" />
 
      <browser:resourceDirectory
         name="collective.facebook.accounts.icons"

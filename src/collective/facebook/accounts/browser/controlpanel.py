@@ -5,6 +5,9 @@ from zope.component import getUtility
 from zope import schema
 from zope.schema.vocabulary import SimpleVocabulary
 
+from plone.app.controlpanel.form import ControlPanelForm
+
+from plone.fieldsets.fieldsets import FormFieldsets
 from plone.fieldsets.form import FieldsetsEditForm
 
 from zope.component import adapts
@@ -104,7 +107,7 @@ nonRevocableVocabulary = SimpleVocabulary.fromItems([(perm, perm) for perm in no
 revocableVocabulary = SimpleVocabulary.fromItems([(perm, perm) for perm in revocable_permissions])
 
 
-class IFacebookAppFieldSchema(Interface):
+class IFacebookUserSchema(Interface):
     """ Facebook App Config """
     non_r_perm = schema.List(title=_(u'Non revocable permissions'),
                              description=_(u"Choose which non revocable "
@@ -138,6 +141,8 @@ class IFacebookAppFieldSchema(Interface):
                                  #description=_(u"Secret for your application."),
                                  #required=True)
 
+class IFacebookAppSchema(Interface):
+
     app_key2 = schema.TextLine(title=_(u'App ID/API Key'),
                               description=_(u"ID for your application. "
                                              "You need to create an app here: "
@@ -149,11 +154,15 @@ class IFacebookAppFieldSchema(Interface):
                                  description=_(u"Secret for your application."),
                                  required=True)
 
+class IFacebookSchema(IFacebookUserSchema, IFacebookAppSchema):
+    """
+    """
+
 
 class FacebookControlPanelAdapter(SchemaAdapterBase):
 
     adapts(IPloneSiteRoot)
-    implements(IFacebookAppFieldSchema)
+    implements(IFacebookSchema)
 
     non_r_perm = ""
     r_perm = ""
@@ -163,7 +172,7 @@ class FacebookControlPanelAdapter(SchemaAdapterBase):
     app_secret2 = ""
 
 
-class FacebookControlPanel(FieldsetsEditForm):
+class FacebookControlPanel(ControlPanelForm):
     """
     Facebook control panel view
     """
@@ -171,14 +180,21 @@ class FacebookControlPanel(FieldsetsEditForm):
     implements(IFacebookControlPanel)
 
     template = ViewPageTemplateFile('./templates/facebook-control-panel.pt')
-
     label = _("Facebook setup")
     description = _("""Lets you configure several Facebook accounts""")
-    form_name = _("Authorize new account")
-    form_description = _(u'Authenticate as a user and grant an application permissions.')
-    form_name2 = _("Authorize new app")
-    form_description2 = _(u'Authenticate as an application.')
-    form_fields = form.FormFields(IFacebookAppFieldSchema)
+
+    auth_user = FormFieldsets(IFacebookUserSchema)
+    auth_user.id = 'auth_user'
+    auth_user.label = _(u'Authorize user')
+
+    auth_app = FormFieldsets(IFacebookAppSchema)
+    auth_app.id = 'auth_app'
+    auth_app.label = _(u'Authorize app')
+
+    form_fields = FormFieldsets(
+                        auth_user,
+                        auth_app
+                        )
 
     request_user_auth = _(u"Request user auth")
     request_app_token = _(u"Authenticate app")

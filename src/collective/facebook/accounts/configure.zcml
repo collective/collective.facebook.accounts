@@ -33,5 +33,12 @@
       description="Uninstall profile for the collective.facebook.accounts package."
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
+      
+    <genericsetup:importStep
+        name="collective.facebook.accounts-importVarious"
+        title="Import various for the initial profile for collective.facebook.accounts"
+        description="Import various for the initial profile for collective.facebook.accounts"
+        handler="collective.facebook.accounts.setuphandlers.import_various">
+    </genericsetup:importStep>
 
 </configure>

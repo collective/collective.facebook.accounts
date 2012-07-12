@@ -3,7 +3,7 @@
 from setuptools import setup, find_packages
 import os
 
-version = '1.0b4.dev0'
+version = '1.0b4'
 description = "This product allows you to associate Facebook accounts with a \
 Plone site using OAuth authentication."
 long_description = open("README.txt").read() + "\n" + \
